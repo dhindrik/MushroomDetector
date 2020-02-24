@@ -14,9 +14,9 @@ namespace MushroomDetector
 
     public class ClassificationEventArgs : EventArgs
     {
-        public List<Prediction> Predictions { get; private set; }
+        public List<Classification> Predictions { get; private set; }
 
-        public ClassificationEventArgs(List<Prediction> predictions)
+        public ClassificationEventArgs(List<Classification> predictions)
         {
             Predictions = predictions;
         }

@@ -34,11 +34,11 @@ namespace MushroomDetector.iOS
         {
             if (error != null)
             {
-                ClassificationCompleted?.Invoke(this, new ClassificationEventArgs(new List<Prediction>()));
+                ClassificationCompleted?.Invoke(this, new ClassificationEventArgs(new List<Classification>()));
             }
 
             var result = request.GetResults<VNClassificationObservation>();
-            var classifications = result.OrderByDescending(x => x.Confidence).Select(x => new Prediction(x.Identifier, x.Confidence)).ToList();
+            var classifications = result.OrderByDescending(x => x.Confidence).Select(x => new Classification(x.Identifier, x.Confidence)).ToList();
 
             ClassificationCompleted?.Invoke(this, new ClassificationEventArgs(classifications));
         }

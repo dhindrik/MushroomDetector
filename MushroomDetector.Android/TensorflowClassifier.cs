@@ -32,6 +32,7 @@ namespace MushroomDetector.Droid
             var width = shape[1];
             var height = shape[2];
 
+            var byteBuffer = GetPhotoAsByteBuffer(bytes, width, height);
 
             var sr = new StreamReader(Application.Context.Assets.Open("labels.txt"));
             var labels = sr.ReadToEnd().Split('\n').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).ToList();
@@ -40,18 +41,16 @@ namespace MushroomDetector.Droid
 
             var outputs = Java.Lang.Object.FromArray(outputLocations);
 
-            var byteBuffer = GetPhotoAsByteBuffer(bytes, width, height);
-
             interpreter.Run(byteBuffer, outputs);
 
-            var predictionResult = outputs.ToArray<float[]>();
+            var classificationResult = outputs.ToArray<float[]>();
 
-            var result = new List<Prediction>();
+            var result = new List<Classification>();
 
             for (var i = 0; i < labels.Count; i++)
             {
                 var label = labels[i];
-                result.Add(new Prediction(label, predictionResult[0][i]));
+                result.Add(new Classification(label, classificationResult[0][i]));
             }
 
             ClassificationCompleted?.Invoke(this, new ClassificationEventArgs(result));

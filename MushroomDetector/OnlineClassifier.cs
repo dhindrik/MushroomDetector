@@ -18,7 +18,7 @@ namespace MushroomDetector
             var client = new HttpClient();
             client.Timeout = new TimeSpan(0, 0, 3);
 
-            client.DefaultRequestHeaders.Add("Prediction-Key", "ad104481e3684f849cac04d627ab93e5");
+            client.DefaultRequestHeaders.Add("Prediction-Key", "<insert-key-here>");
 
             string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/80c96cf0-45ee-4887-9925-46422af8711d/classify/iterations/Iteration3/image";
 

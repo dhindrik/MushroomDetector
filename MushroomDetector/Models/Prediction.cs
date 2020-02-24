@@ -6,15 +6,15 @@ namespace MushroomDetector.Models
 {
     public class PredictionResult
     {
-        public List<Prediction> Predictions { get; set; }
+        public List<Classification> Predictions { get; set; }
     }
 
-    public class Prediction
+    public class Classification
     {
         public float Probability { get; set; }
         public string TagName { get; set; }
 
-        public Prediction(string tagName, float probability)
+        public Classification(string tagName, float probability)
         {
             TagName = tagName;
             Probability = probability;
