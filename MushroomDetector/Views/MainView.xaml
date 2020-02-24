@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvvm:ViewBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MushroomDetector.Views.MainView"
+             xmlns:mvvm="clr-namespace:TinyMvvm.Forms;assembly=TinyMvvm.Forms" Title="Mushroom Detector" Shell.NavBarIsVisible="False"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+               xmlns:vm="clr-namespace:MushroomDetector.ViewModels" x:TypeArguments="vm:MainViewModel" x:DataType="vm:MainViewModel">
+    <ios:Page.UseSafeArea>false</ios:Page.UseSafeArea>
+   <Grid> 
+       <Image Source="bg.jpg" Aspect="AspectFill" />
+       <Frame VerticalOptions="Center" Margin="20" HasShadow="False" Padding="20" BackgroundColor="#DDFFFFFF">
+            <StackLayout Padding="0" Spacing="10">
+                <Label Text="Have you found a mushroom?" FontSize="Large" FontAttributes="Bold" />
+                <Label Text="Take a photo or pick a photo from your photo libray to identify what type of mushroom you have found!" />
+                <Button Text="Take photo" HeightRequest="60" Command="{Binding TakePhoto}" />
+                <Button Text="Pick photo" HeightRequest="60" Command="{Binding PickPhoto}" />
+            </StackLayout>
+        </Frame>
+   </Grid>
+</mvvm:ViewBase>

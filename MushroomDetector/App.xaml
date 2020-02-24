@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    x:Class="MushroomDetector.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="MainColor">#00B233</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+             <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Font Awesome 5 Free" />
+                <On Platform="Android" Value="fontawesome.otf#" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

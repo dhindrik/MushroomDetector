@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvvm:ViewBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:TinyMvvm.Forms;assembly=TinyMvvm.Forms"
+               xmlns:vm="clr-namespace:MushroomDetector.ViewModels"
+             x:Class="MushroomDetector.Views.ResultView" x:TypeArguments="vm:ResultViewModel" Title="{Binding Item.Name}">
+   <StackLayout>
+
+       <Image Source="{Binding Item.PhotoUrl}" />
+       <Button Margin="20" Text="Read about it on Wikipedia" Command="{Binding Open}" />
+   </StackLayout>
+</mvvm:ViewBase>
